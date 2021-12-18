@@ -3,3 +3,9 @@ version: "3.8"
 services:
   localstack:
     image: localstack/localstack:latest
+    environment:
+    - DOCKER_HOST=unix:///var/run/docker.sock
+    ports:
+    - "4566:4566"
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
